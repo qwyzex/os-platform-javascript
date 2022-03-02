@@ -14,11 +14,24 @@ export default function Home() {
             <Head>
                 <title>idk</title>
             </Head>
-            <h1>PLATFORM: {x?.platform || "LOADING..."}</h1>
-            <h1>
-                USERAGENT: {x?.userAgentData?.platform || x?.platform || "LOADING..."}
-            </h1>
-            <h1>MOBILE: {x?.userAgentData?.mobile ? "YES" : "NO" || "LOADING..."}</h1>
+            <div>
+                {x ? (
+                    <>
+                        {" "}
+                        <h1>PLATFORM: {x?.platform || "LOADING..."}</h1>
+                        <h1>
+                            USERAGENT:{" "}
+                            {x?.userAgentData?.platform || x?.platform || "LOADING..."}
+                        </h1>
+                        <h1>
+                            MOBILE:{" "}
+                            {x?.userAgentData?.mobile ? "YES" : "NO" || "LOADING..."}
+                        </h1>
+                    </>
+                ) : (
+                    "Loading"
+                )}
+            </div>
         </div>
     );
 }
