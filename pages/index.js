@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { useState, useEffect } from "react";
 
@@ -15,8 +14,11 @@ export default function Home() {
             <Head>
                 <title>idk</title>
             </Head>
-            <h1>PLATFORM: {x?.platform}</h1>
-            <h1>USERAGENT: {x?.userAgentData?.platform || x?.platform || "UNKNOWN"}</h1>
+            <h1>PLATFORM: {x?.platform || "LOADING..."}</h1>
+            <h1>
+                USERAGENT: {x?.userAgentData?.platform || x?.platform || "LOADING..."}
+            </h1>
+            <h1>MOBILE: {x?.userAgentData?.mobile ? "YES" : "NO" || "LOADING..."}</h1>
         </div>
     );
 }
